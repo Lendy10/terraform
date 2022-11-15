@@ -6,6 +6,7 @@ include {
     path = find_in_parent_folders()
 }
 
+//make atlantis subnet
 inputs = {
     name = "subnet-atlantis"
     network = "vpc-atlantis-check"
