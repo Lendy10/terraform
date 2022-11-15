@@ -7,7 +7,7 @@ include {
 }
 
 inputs = {
-  name         = "deploy-server"
+  name         = "deploy-server-check"
   network      = "vpc-atlantis-check"
   subnetwork   = "subnet-atlantis"
   machine_type = "e2-small"
