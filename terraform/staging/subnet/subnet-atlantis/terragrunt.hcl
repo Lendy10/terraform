@@ -1,5 +1,5 @@
 terraform {
-    source = "../../../../module//vpc"
+    source = "../../../../module//subnet"
 }
 
 include {
@@ -9,5 +9,5 @@ include {
 inputs = {
     name = "subnet-atlantis"
     network = "vpc-atlantis-check"
-    ip_cidr_range = "10.20.0.0/24"
+    ip_cidr_range = "10.30.0.0/24"
 }
