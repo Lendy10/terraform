@@ -10,7 +10,7 @@ include {
 inputs = {
     name = "fw-atlantis"
     network = "vpc-atlantis-check"
-    ports = ["22", "80"]
+    ports = ["22"]
     source_ranges = ["0.0.0.0/0"]
     target_tags = ["allow-ssh-icmp"]
 }
