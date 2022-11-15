@@ -1,7 +1,9 @@
 terraform {
+  backend "gcs" {
+  }
   required_providers {
     google = {
-      source = "hashicorp/google"
+      source  = "hashicorp/google"
       version = "4.43.0"
     }
   }
@@ -9,9 +11,9 @@ terraform {
 
 provider "google" {
   # Configuration options
-  project = var.project
-  region = var.region
-  zone = var.zone
+  project     = var.project
+  region      = var.region
+  zone        = var.zone
   credentials = var.credentials
 }
 
@@ -28,7 +30,7 @@ resource "google_compute_instance" "default" {
   }
 
   network_interface {
-    network = var.network
+    network    = var.network
     subnetwork = var.subnetwork
 
     access_config {

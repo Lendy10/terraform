@@ -23,7 +23,7 @@ variable "machine_type" {
 }
 
 variable "tags" {
-  type = list
+  type = list(any)
 }
 
 variable "image" {
