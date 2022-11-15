@@ -7,5 +7,5 @@ include {
 }
 
 inputs = {
-    name = "vpc-atlantis"
+    name = "vpc-atlantis-check"
 }
