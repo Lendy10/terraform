@@ -1,7 +1,7 @@
 remote_state {
   backend = "gcs"
   config = {
-    bucket = "lendy-terraform-state"
+    bucket = "lendy-terragrunt-atlantis"
     prefix = "${path_relative_to_include()}/terraform.tfstate"
     credentials = "/home/lendyph/credential.json"
   }
