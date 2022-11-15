@@ -8,7 +8,6 @@ include {
 
 //make an firewall
 inputs = {
-    name = "fw-atlantis"
     network = "vpc-atlantis-check"
     ports = ["22"]
     source_ranges = ["0.0.0.0/0"]
