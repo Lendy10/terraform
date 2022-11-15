@@ -7,7 +7,7 @@ include {
 }
 
 inputs = {
-    name = "subnet-atlantis"
+    name = "subnet-atlantis-check"
     network = "vpc-atlantis-check"
     ip_cidr_range = "10.30.0.0/24"
 }
