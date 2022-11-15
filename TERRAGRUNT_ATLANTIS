@@ -1,0 +1,55 @@
+# terragrunt base sample
+remote_state {
+  backend = "gcs"
+  config = {
+    bucket = "adhithia1-terraform-state"
+    prefix = "${path_relative_to_include()}/terraform.tfstate"
+    credentials = "/home/adhithia/gcp-staging.json"
+  }
+}
+
+inputs = {
+  credentials = "/home/adhithia/gcp-staging.json"
+  region      = "asia-southeast2"
+  zone      = "asia-southeast2-a"
+  project  = "staging-367908"
+  name = "${basename(get_terragrunt_dir())}"
+}
+
+# terragrunt resources sample
+terraform {
+  source = "../../../../module//instances"
+}
+
+include {
+  path = find_in_parent_folders()
+}
+
+inputs = { 
+  machine_type = "e2-medium"
+  tags = ["http-server", "allow-ssh"]
+  image = "debian-cloud/debian-11"
+  network = "vpc-staging-api"
+  subnetwork = "subnet-api"
+}
+# trigger delete
+
+
+# Run Atlantis
+sudo ./atlantis server --atlantis-url="http://34.101.162.86" --gh-user="lendy10" --gh-token="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" --gh-webhook-secret="Atlantis#123" --repo-allowlist="github.com/Lendy10/terraform" --port=80 --repo-config="repos.yaml"
+
+# Atlantis config
+repos:
+- id: /.*/
+  workflow: terragrunt
+workflows:
+  terragrunt:
+    plan:
+      steps:
+      - env:
+          name: DESTROY_PARAMETER
+          command:  if [ "$COMMENT_ARGS" = "\-\d\e\s\t\r\o\y" ]; then echo "-destroy"; else echo ""; fi
+      - run: terragrunt plan --terragrunt-non-interactive -no-color -out=$PLANFILE $DESTROY_PARAMETER
+    apply:
+      steps:
+      - run: terragrunt apply --terragrunt-non-interactive -no-color $PLANFILE
