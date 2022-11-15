@@ -1,7 +1,9 @@
 terraform {
+  backend "gcs" {
+  }
   required_providers {
     google = {
-      source = "hashicorp/google"
+      source  = "hashicorp/google"
       version = "4.43.0"
     }
   }
@@ -9,9 +11,9 @@ terraform {
 
 provider "google" {
   # Configuration options
-  project = var.project
-  region = var.region
-  zone = var.zone
+  project     = var.project
+  region      = var.region
+  zone        = var.zone
   credentials = var.credentials
 }
 
@@ -29,5 +31,5 @@ resource "google_compute_firewall" "default" {
   }
 
   source_ranges = var.source_ranges
-  target_tags = var.target_tags
+  target_tags   = var.target_tags
 }
