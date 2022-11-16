@@ -8,6 +8,7 @@ remote_state {
 }
 
 # /home/lendyph/credential.json
+# /home/lendyph/Downloads/studied-union-367003-ec08e9cf3f22.json
 inputs = {
   credentials = "/home/lendyph/credential.json"
   region      = "asia-southeast2"
