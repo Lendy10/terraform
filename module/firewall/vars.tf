@@ -23,13 +23,13 @@ variable "network" {
 }
 
 variable "ports" {
-  type = list
+  type = list(any)
 }
 
 variable "source_ranges" {
-  type = list
+  type = list(any)
 }
 
 variable "target_tags" {
-  type = list
+  type = list(any)
 }
