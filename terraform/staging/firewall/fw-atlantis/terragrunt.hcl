@@ -6,6 +6,7 @@ include {
   path = find_in_parent_folders()
 }
 
+//fw-deploy-server
 inputs = {
     name = "fw-deploy-server"
     network = "vpc-atlantis-check"
