@@ -8,6 +8,6 @@ include {
 
 inputs = {
     name = "peer-api-deploy"
-    network = "vpc-api"
-    peer_network = "vpc-atlantis-check"
+    network = "projects/studied-union-367003/global/networks/vpc-api"
+    peer_network = "projects/studied-union-367003/global/networks/vpc-atlantis-check"
 }
