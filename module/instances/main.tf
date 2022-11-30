@@ -18,7 +18,8 @@ provider "google" {
 }
 
 resource "google_compute_instance" "default" {
-  name         = var.name
+  count        = var.number
+  name         = "${var.name}-${count.index}"
   machine_type = var.machine_type
 
   tags = var.tags

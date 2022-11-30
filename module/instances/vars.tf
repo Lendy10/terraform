@@ -38,6 +38,6 @@ variable "subnetwork" {
   type = string
 }
 
-variable "count" {
+variable "number" {
   type = string
 }
