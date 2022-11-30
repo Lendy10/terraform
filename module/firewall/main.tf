@@ -18,7 +18,8 @@ provider "google" {
 }
 
 resource "google_compute_firewall" "default" {
-  name    = var.name
+  count   = var.count
+  name    = "${var.name}-${count.index}"
   network = var.network
 
   allow {

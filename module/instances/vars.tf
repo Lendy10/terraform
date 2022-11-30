@@ -37,3 +37,7 @@ variable "network" {
 variable "subnetwork" {
   type = string
 }
+
+variable "count" {
+  type = string
+}
