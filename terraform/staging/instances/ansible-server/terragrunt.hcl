@@ -8,7 +8,7 @@ include {
 
 # cek
 inputs = {
-  name         = "deploy-server"
+  name         = "deploy-server-atlantis"
   network      = "vpc-atlantis-check"
   subnetwork   = "subnet-atlantis"
   machine_type = "e2-small"
