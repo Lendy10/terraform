@@ -6,13 +6,12 @@ include {
   path = find_in_parent_folders()
 }
 
-# cek
 inputs = {
-  name         = "deploy-server-atlantis"
+  name         = "deploy-server"
   network      = "vpc-atlantis-check"
   subnetwork   = "subnet-atlantis"
+  number = "2"
   machine_type = "e2-small"
-  number        = "2"
   image        = "https://www.googleapis.com/compute/v1/projects/ubuntu-os-pro-cloud/global/images/ubuntu-pro-2004-focal-v20221107"
   tags         = ["http-server", "allow-ssh-icmp"]
 }
