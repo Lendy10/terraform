@@ -30,15 +30,13 @@ resource "google_container_cluster" "default" {
 resource "google_container_node_pool" "default" {
   name       = "${var.name}-node-pool"
   location   = "us-central1"
-  cluster    = google_container_cluster.primary.name
+  cluster    = var.name
   node_count = var.node_count
 
   node_config {
     preemptible  = true
     machine_type = var.instance_type
 
-    # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
-    service_account = google_service_account.default.email
     oauth_scopes = [
       "https://www.googleapis.com/auth/cloud-platform"
     ]
