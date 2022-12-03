@@ -1,5 +1,5 @@
 terraform {
-    source = "../../../../module//peering" 
+    source = "../../../../module//kubernetes" 
 }
 
 include {
