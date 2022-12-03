@@ -7,7 +7,7 @@ include {
 }
 
 inputs = {
-    name = "kubernetes-cluster-devops"
+    name = "kubernetes-cluster-devops-check"
     node_count = "3"
     instance_type = "e2.medium"
 }
