@@ -17,7 +17,7 @@ provider "google" {
   credentials = var.credentials
 }
 
-resource "google_container_cluster" "primary" {
+resource "google_container_cluster" "default" {
   name = var.name
 
   # We can't create a cluster with no node pool defined, but we want to only use
@@ -27,7 +27,7 @@ resource "google_container_cluster" "primary" {
   initial_node_count       = var.node_count
 }
 
-resource "google_container_node_pool" "primary_preemptible_nodes" {
+resource "google_container_node_pool" "default" {
   name       = "${var.name}-node-pool"
   location   = "us-central1"
   cluster    = google_container_cluster.primary.name
