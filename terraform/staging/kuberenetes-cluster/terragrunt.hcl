@@ -1,0 +1,13 @@
+terraform {
+    source = "../../../module//kubernetes" 
+}
+
+include {
+    path = find_in_parent_folders()
+}
+
+inputs = {
+    name = "kubernetes-cluster-devops-check"
+    node_count = "3"
+    instance_type = "e2.medium"
+}
