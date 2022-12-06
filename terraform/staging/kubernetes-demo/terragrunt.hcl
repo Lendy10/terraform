@@ -9,5 +9,5 @@ include {
 inputs = {
     name = "kuberenetes-cek-atlantis"
     node_count = "3"
-    instance_type = "ec2.medium"
+    instance_type = "e2-medium"
 }
