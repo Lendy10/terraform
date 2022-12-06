@@ -29,7 +29,7 @@ resource "google_container_cluster" "default" {
 
 resource "google_container_node_pool" "default" {
   name       = "${var.name}-node-pool"
-  cluster    = var.name
+  cluster    = google_container_cluster.default.name
   node_count = var.node_count
 
   node_config {
