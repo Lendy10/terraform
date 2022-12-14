@@ -7,7 +7,7 @@ include {
 }
 
 inputs = {
-    name = "kuberenetes-cek-atlantis"
+    name = "kuberenetes-cluster-atlantis"
     node_count = "3"
     instance_type = "e2-medium"
 }
